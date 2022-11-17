@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body{
+    background-color: rgb(34,34,34);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+}
+
+#title{
+    flex-direction: column;
+    line-height: 30px;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+a{
+    color:aliceblue;
+}
+
+a:hover{
+    color:aquamarine;
+    transition: 0.3s all;
+}
+
+#ja-conta-btn{
+    border: 2px solid rgb(127, 255, 212);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#ja-conta-btn:hover{
+    background-color:rgb(127, 255, 212);
+    color: aliceblue;
+}
+
+h1{
+    font-weight: 200;  
+}
+
+main{
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+h2{
+    margin-left: 40%;
+    text-align: center;
+    display: flex;
+    margin-top: 20px;
+    font-size: 60px;
+    line-height:50px;
+    font-family: 'Montserrat', sans-serif;
+    color:aliceblue;
+}
+
+span{
+    color: aquamarine;
+}
+
+
+p{  
+    margin-top: 10px;
+    margin-left: 15%;
+    text-align: center;
+    line-height: 20px;
+    width: 80%;
+}
