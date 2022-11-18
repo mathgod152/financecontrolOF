@@ -90,7 +90,7 @@
                                     <div class="nav_dropdown-collapse">
                                         <div class="nav_dropdown-content">
                                             <a href="<?php echo INCLUDE_PATH?>editardados" class="nav_dropdown-item">Editar Dados</a>
-                                            <a href="#" class="nav_dropdown-item">Editar Dados Dependente</a>
+                                            <a href="<?php echo INCLUDE_PATH?>editardadosdependentes" class="nav_dropdown-item">Editar Dados Dependente</a>
                                         </div><!--nav_dropdown-collapse-->
 
                                     </div><!--nav_dropdown-collapse-->

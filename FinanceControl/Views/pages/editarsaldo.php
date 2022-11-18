@@ -50,18 +50,28 @@
 <main>
     <section class="registro">
         <div class="Titulo">
-            <h1>Editar Dados</h1>
+            <h1>Editar Saldo</h1>
         </div><!--titulo-->
         <form  method="post"> 
         <div class="selecionar">
-            <select method="post" name="confirmar">
-                <option value=1>Renda</option>
-                <option  value=2>Dividas</option>
-                <option value=3>Saldo</option>
+            <select method="post" name="Dado">
+            <?php foreach ($info2 as $key => $value2){?>
+                <option value=<?php echo $value2['id']?>>Saldo: <?php echo $value2['nome_saldo'];?>Id: <?php echo $value2['id'] ;?></option>
+                <?php } ?>
+            </select>
+        </div><!--select-->
+        <br>
+        <div class="selecionar">
+            <select method="post" name="dado_adicionado">
+                <option value=1>Editar</option>
+                <option  value=2>Deletar</option>
             </select>
         </div><!--select-->
 
         <div class="formulario">     
+                <input type="text" name="nome_dado" placeholder="Digite a identificação do Dado">
+                <input type="text" name="valor_dado" placeholder="Valor">
+                <input type="date" name="data_dado" placeholder="Data">
                 <input type="submit" name="confirmar_dado" value="Confirmar >">
         </form>
         </div><!--form-->

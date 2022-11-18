@@ -2,26 +2,27 @@
 
     namespace FinanceControl\Controlers;
 
-    class EditardadosControler{
+    class EditardadosdependentesControler{
 
         public function index(){
 
             if(isset($_POST['confirmar_dado'])){
-                $id_usuario = $_SESSION['id'];
                 if(isset($_POST['confirmar'])){
                     $valor = isset($_POST['confirmar']) ? $valor=$_POST['confirmar'] : 0;
                     $id= isset($_POST['Dado']) ? $id=$_POST['Dado'] : 0;
                     if(($valor == 1)){
-                        \FinanceControl\Utilidades::redirect('editarrenda');
+                        \FinanceControl\Utilidades::redirect('editardependentes');
                     }elseif(($valor == 2)){
-                        \FinanceControl\Utilidades::redirect('editardivida');
+                        \FinanceControl\Utilidades::redirect('editarrendadependentes');
                     }elseif(($valor == 3)){
-                        \FinanceControl\Utilidades::redirect('editarsaldo');;
+                        \FinanceControl\Utilidades::redirect('editardividadependentes');
+                    }elseif(($valor == 4)){
+                        \FinanceControl\Utilidades::redirect('editarsaldodependentes');;
                     }
                 
             }
             }
-            \FinanceControl\Views\MainView::render('editardados'); 
+            \FinanceControl\Views\MainView::render('editardadosdependentes'); 
         }
     }
 
