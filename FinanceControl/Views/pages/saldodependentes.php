@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="<?php echo INCLUDE_PATH_STATIC ?>estilos/saldo.css" rel="stylesheet">
+    <link href="<?php echo INCLUDE_PATH_STATIC ?>estilos/55.css" rel="stylesheet">
     <title>Bem-vindo, <?php echo $_SESSION['nome']; ?></title>
 </head>
 
@@ -49,8 +49,6 @@
         ?>
 <main>
 <form method="post">
-        <input type="date" name="data_1" placeholder="Data">
-        <input type="date" name="data_2" placeholder="Data">
         <?php        
         if(isset($_POST['confirmar_dado'])){
             $data1 = $_POST['data_1'];
@@ -98,9 +96,7 @@
                 $sql->execute();
                 $totalentradas = $sql->fetch(PDO::FETCH_ASSOC);}?>
     <section class="grafcbar_content grid">
-      <div class="grafcbar_items">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="chart_div2" style="width: 600px; height: 400px;margin: 5px;">
              <script type="text/javascript">
                 google.charts.load('current', {packages: ['corechart', 'bar']});
                 google.charts.setOnLoadCallback(drawColColors);
@@ -133,8 +129,6 @@
                     }
              </script>
          </div>
-        <input type="date" name="data_3" placeholder="Data">
-        <input type="date" name="data_4" placeholder="Data">
         <?php        
             if(isset($_POST['confirmar_dado'])){
                 $data3 = $_POST['data_3'];
@@ -185,7 +179,6 @@
 
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                 <div id="chart_div" style="width: 600px; height: 400px; margin: 5px;">
                      <script type="text/javascript">
                          google.charts.load('current', {packages: ['corechart', 'bar']});
                 google.charts.setOnLoadCallback(drawColColors);
@@ -222,9 +215,7 @@
         
 
         <div class="linegrafc_items" style="margin-top:-20px;">
-        <input type="submit" name="confirmar_dado" value="Confirmar >"> 
                  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                 <div id="curve_chart" style="width: 600px; height: 400px; margin: 5px; ">
                      <script type="text/javascript">
                         google.charts.load('current', {'packages':['corechart']});
                         google.charts.setOnLoadCallback(drawChart);
@@ -250,13 +241,29 @@
                         }
                      </script>
                  </div>
-                 <div class="infos">
-                 <h1>Saldo <?php echo $data1;?> a <?php echo $data2;?></h1>
-                 <?php $valor_dado = $totalentradas['entradastotal'] - $totaldividas['dividastotal'];?>                  
-                <h1><?php echo  $valor_dado .'R$' ;?></h1>
-
-                
-                </div><!--infos-->
+                 <div id="chart_wrap">
+                <div id="chart_wrap1">
+                        <input type="date" name="data_1" placeholder="Data">
+                        <input type="date" name="data_2" placeholder="Data">
+                        <div id="chart_div2"></div>
+                    </div><!--chart_wraP1-->
+                    <div id="chart_wrap2">
+                        <input type="date" name="data_3" placeholder="Data">
+                        <input type="date" name="data_4" placeholder="Data">
+                        <div id="chart_div"></div>
+                    </div><!--chart_wraP2-->
+                    <div id="chart_wrap3">
+                        <input type="submit" name="confirmar_dado" value="Confirmar >"> 
+                        <div id="curve_chart"></div>
+                        <div class="Relatorio">
+                        <h1>Relatorio Total Do Saldo</h1>  
+                        <?php $valor_entradas = $totalentradas['entradastotal'];?>
+                        <?php $valor_dividas = $totaldividas['dividastotal'];?>                                  
+                                <h2>Renda Total: R$ <?php echo $valor_entradas?></h2>
+                                <h2>Dividas Total: R$ <?php echo $valor_dividas?></h2>
+                                <h2>Saldo Total: R$ <?php echo $valor_entradas - $valor_dividas?></h2>
+                        </div><!--Relatorio-->
+                </div>
     </form> 
     </div>
  </main>

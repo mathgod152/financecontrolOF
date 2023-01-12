@@ -4,10 +4,11 @@
   
   
 html,body {
-    background-color: rgb(34, 34, 34);
+  background-color: rgb(34, 34, 34);
     color: white;
     font-family: 'Montserrat', sans-serif;
     margin: 20px 0 0 0;
+    max-width: 1200px;
     padding: 16px 16px 0;
     font-size: 16px;
 }
@@ -303,43 +304,49 @@ span, i{
     opacity: 1;                    
                         }
 
+
 }
 
 /*---------------AQUI FICA A MAIN----------------------------------------------*/  
-.main{
-    align-items: center;
+main{
+text-align: center;
+width: 20%;
+margin-left: 60%;
+margin-right: 50%;
 }
 
-.grafcbar_items .chart_div,
-.grafcbar_items .chart_div2{
-    display: flex;
+h1{
+  margin-left: 100%;
+  display: flex;
 }
 
-.linegrafc_items .curve_chart{
-    display: flex;
+
+.selecionar select{
+  border-radius: 10%;
+  border-color: aquamarine;
+  background-color: #121212;
+  color: aquamarine;
+  width: 500px;
+  padding: 20px;
+  margin-left: 6%;
 }
 
-select{
+.formulario{
+  margin-top: 10%;
+  width: 25%;
+  padding: 5%;
+}
+
+.formulario input{
+    width: 500px;
+    padding: 20px;
     border-radius: 10%;
     border-color: aquamarine;
     background-color: #121212;
-    color: aquamarine
-}
+    color: aquamarine;
+    margin-top: 35%;
+  }
 
-.infos{
-    background-color: rgb(196, 121, 8);
-    border-radius: 8%;
-}
-
-.infos h1{
-    display: flex;
-    padding-left: 40%;
-}
-
-.infos h2{
-    display: flex;
-    padding-left: 35%;
-}
 
   /*--------------video_items------------*/
   @media screen and (min-width:768px) {
@@ -432,9 +439,32 @@ select{
     }
   
     main {
-      padding-top: 20px;
-      padding-left: 50px;
+      margin-right: 15%;
+      padding-right:10%;
+
     }
+
+
+    .Titulo h1{
+      font-size: 10px;
+    }
+
+    .registro{
+      padding-top: 20%;
+      margin-right: 10%;
+    }
+
+    .selecionar select{
+      width: 100px;
+    }
+
+    .formulario{
+
+    }
+    
+    .formulario input{
+        width: 100px;
+      }
   }
   
   @media screen and (min-width:1080px) {

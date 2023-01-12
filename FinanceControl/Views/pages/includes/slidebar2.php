@@ -1,12 +1,14 @@
-        <!--header-->
-        <header class="header">
-            <div class="header_container">
-              <div class="none"> </div>
-     
-     
-              <div class="user">
+
+     <!--    header      -->
+     <header class="header">
+       <div class="header_container">
+
+
+        <div class="user">
                 <div class="icon">
+                  <a href="<?php echo INCLUDE_PATH?>perfil" >
                   <i class="fa-solid fa-gear"></i>
+                  </a>
                   <a href="<?php echo INCLUDE_PATH?>?loggout">
                     <i class="fa-solid fa-right-to-bracket"></i>
                   </a>
@@ -15,14 +17,15 @@
                 <div class="img">
                   <img src="avatar.jpeg" alt="">
                 </div><!--IMG-->
-              </div><!--user-->    
-            <div class="toggle">
-                <i class="fa-solid fa-bars" id="header-toggler"></i>
-            </div><!--"toggle"-->
-        </div><!--header_container-->
-    </header>
-        <!--header-->
-        <?php
+              </div><!--user-->
+         <div class="toggle">
+           <i class="fa-solid fa-bars" id="header-toggle"></i>
+         </div><!--"toggle"-->
+       </div><!--header_container-->
+     </header>
+     <!--header -->
+
+     <?php
             $id_usuario = $_SESSION['id'];
             $nomeDivida = ['nome_dividaF'];
             $valor = ['valor_dividasF'];
@@ -39,7 +42,9 @@
                 <div>
                     <a href="#" class="nav_link nav_logo ">
                     <i class ="fa-solid fa-bars nav_icon"></i>
-                        <div class ="Finance-Control">Finance <h3>Control</h3></div>   
+                    <span class="logo_name">
+                    <div class ="Finance-Control">Finance <h3>Control</h3></div>
+                    </span>   
                     </a>
 
                     <div class="nav_list">
@@ -118,3 +123,27 @@
             </nav>
         </section><!--section nav-->
         <!--navegador-->
+
+                <script>
+             const showMenu = (headerToggle, navbarId) => {
+   const toggleBtn = document.getElementById(headerToggle),
+     nav = document.getElementById(navbarId)
+
+   if (headerToggle && navbarId) {
+     toggleBtn.addEventListener('click', () => {
+       nav.classList.toggle('show-menu')
+       toggleBtn.classList.toggle('fa-times')
+     })
+   }
+ }
+ showMenu('header-toggle', 'navbar')
+
+ const linkcolor = document.querySelectorAll('.nav_link');
+
+ function colorLink() {
+   linkcolor.forEach(l => l.classList.remove('active'))
+   this.classList.add('active')
+ }
+ linkcolor.forEach(l => l.addEventListener('click', colorLink))
+        </script>
+ 

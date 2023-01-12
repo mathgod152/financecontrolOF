@@ -2,7 +2,7 @@
 
     namespace FinanceControl\Controlers;
 
-    class SobreControler{
+    class ServicoControler{
 
         public function index(){
 
